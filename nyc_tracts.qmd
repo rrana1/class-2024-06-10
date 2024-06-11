@@ -1,12 +1,40 @@
 ---
-title: "nyc_tracts"
+title: "Class 06-10"
 format: html
+author: "Rinku Rana"
+
+  
 ---
+
+```{r}
+#| label: load library
+#| message: false
+#| echo: false
+
+library(tidyverse)
+
+```
 
 
 ```{r}
 #| label: "loaddata"
-x <- read.csv("data/nyc_tracts.csv")
-x
+#| message: false
+#| echo: false
+
+nyc_data <- read_csv("data/nyc_tracts.csv")
+
+
+nyc_data |> 
+  drop_na() |>  
+  ggplot(aes(x = race, y = med_income , color = race)) + 
+  geom_boxplot() + 
+  geom_smooth(method = "lm") +
+ 
+  labs(
+    title = "Distribution of Median income by Race",
+    x= "Race",
+    y ="Median Income"
+  )
+
 ```
 
