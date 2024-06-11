@@ -1,0 +1,12 @@
+---
+title: "nyc_tracts"
+format: html
+---
+
+
+```{r}
+#| label: "loaddata"
+x <- read.csv("data/nyc_tracts.csv")
+x
+```
+
